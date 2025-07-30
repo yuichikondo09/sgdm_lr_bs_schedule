@@ -77,7 +77,7 @@ if __name__ == '__main__':
             lr_type = "unknown"
         wandb_project_name = "sgdm_CIFAR-100"
         wandb_exp_name = f"{method}_{bs_type}_{lr_type}"
-        wandb.init(config=config, project=wandb_project_name, name=wandb_exp_name, entity="XXXXXXX")
+        wandb.init(config=config, project=wandb_project_name, name=wandb_exp_name, entity="XXXXXX")
 
     for epoch in range(start_epoch, epochs):
         batch_size = bs_scheduler.get_batch_size()
