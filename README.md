@@ -7,5 +7,5 @@ We analyze the convergence behavior of stochastic gradient descent with momentum
 # Wandb Setup
 Please change entity name XXXXXX to your wandb entitiy.
 ```bash
-wandb.init(config=config, project=wandb_project_name, name=wandb_exp_name, entity="XXXXXXX")
+wandb.init(config=config, project=wandb_project_name, name=wandb_exp_name, entity="XXXXXX")
 ```
