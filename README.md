@@ -9,3 +9,27 @@ Please change entity name XXXXXX to your wandb entitiy.
 ```bash
 wandb.init(config=config, project=wandb_project_name, name=wandb_exp_name, entity="XXXXXX")
 ```
+
+# Usage
+```bash
+python cifar100.py XXXXXX.json
+```
+
+# Example JSON Configuration
+```bash
+{
+    "model": "resnet18",
+    "bs_method": "constant",
+    "lr_method": "constant",
+    "beta_method": "constant",
+    "init_bs": 128,
+    "init_lr": 0.1,
+    "init_beta": 0.9,
+    "epochs": 300,
+    "nshb": false,
+    "use_wandb": true
+}
+```
+| Parameter | Value | Description |
+| :-------- | :---- | :---------- |
+| `model` | `"resnet18"`, `"WideResNet28_10"`, etc. | Specifies the model architecture to use. |
