@@ -102,7 +102,6 @@ if __name__ == '__main__':
                     "train_loss": train_loss, "train_acc": train_acc,
                     "norm_result": norm_result,
                     "test_loss": test_loss, "test_acc": test_acc
+                    # ,"batch_size": batch_size, "learning_rate": last_lr, "beta": last_beta
                     })
         
-        if use_wandb:
-            wandb.log({"batch_size": batch_size, "learning_rate": last_lr, "beta": last_beta})
