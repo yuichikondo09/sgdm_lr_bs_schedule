@@ -33,3 +33,6 @@ python cifar100.py XXXXXX.json
 | Parameter | Value | Description |
 | :-------- | :---- | :---------- |
 | `model` | `"resnet18"`, `"WideResNet28_10"`, etc. | Specifies the model architecture to use. |
+| `bs_method` | `"constant"`, `"exp_growth"` | Method for adjusting the batch size. |
+|`lr_method`|`"constant"`, `"cosine"`, `"diminishing"`, `"linear"`, `"poly"`, <br>`"exp_growth"`,<br>`"warmup_const"`, `"warmup_cosine"`|Method for adjusting the learning rate.|
+|`beta_method`|`"constant"`|Method for adjusting the momentum parameter $\beta$.|
