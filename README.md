@@ -39,10 +39,10 @@ Below is a detailed description of each configuration parameter used in the JSON
 
 | Parameter | Type & Example | Description |
 | :- | :- | :- |
-| `model` | `string` (`"resnet18"`, `"WideResNet28_10"`, etc.) | Specifies the model architecture |
-| `bs_method` | `string` (`"constant"`, `"exp_growth"`) | Method for adjusting the batch size |
-| `lr_method` | `string` (`"constant"`, `"cosine"`, `"diminishing"`,<br>`"linear"`, `"poly"`, `"exp_growth"`,<br>`"warmup_const"`, `"warmup_cosine"`) | Method for adjusting the learning rate |
-| `beta_method` | `string` (`"constant"`) | Method for adjusting the momentum parameter (β). *Only constant is used in this study* |
+| `model` | `str` (`"resnet18"`, `"WideResNet28_10"`, etc.) | Specifies the model architecture |
+| `bs_method` | `str` (`"constant"`, `"exp_growth"`) | Method for adjusting the batch size |
+| `lr_method` | `str` (`"constant"`, `"cosine"`, `"diminishing"`,<br>`"linear"`, `"poly"`, `"exp_growth"`,<br>`"warmup_const"`, `"warmup_cosine"`) | Method for adjusting the learning rate |
+| `beta_method` | `str` (`"constant"`) | Method for adjusting the momentum parameter (β). *Only constant is used in this study* |
 | `init_bs` | `int` (`128`) | Initial batch size |
 | `bs_max` | `int` (`4096`) | Maximum batch size when increasing batch size. Used when `bs_method="exp_growth"` |
 | `init_lr` | `float` (`0.1`) | Initial learning rate                                                                                                              |
