@@ -17,6 +17,6 @@ def test(model, device, testloader, criterion):
             total += labels.size(0)
             correct += preds.eq(labels).sum().item()
 
-    test_loss = test_loss / (batch_idx + 1)
+    test_loss = total_loss / (batch_idx + 1)
     test_acc = 100. * correct / total
     return test_loss, test_acc
