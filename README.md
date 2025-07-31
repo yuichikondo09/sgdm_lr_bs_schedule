@@ -48,4 +48,4 @@ python cifar100.py XXXXXX.json
 |`bs_growth_rate`|`float` (e.g., `2.0`)|The factor by which the batch size increases after each interval. Used when `bs_method` is `"exp_growth"`.|
 |`lr_growth_rate`| `float` (e.g., `1.2`) |The factor by which the learning rate increases after each interval. Used when `lr_method` is `"exp_growth"`, `"warnup_const`", or `"warmup_cosine"`.|
 |`power`| `float` (e.g., `2.0`) |A parameter used when `lr_method` is set to `"poly"`, defining the polynomial decay rate of the learning rate.|
-|`nshb| `boolean` (e.g., `true`) | Selects the momentum update rule. Set to `false` to use SHB: $\bm{m}_t = \beta \bm{m}_{t-1} + \nabla f(\bm{\theta}_{t})$, and `true` to use NSHB: $\bm{m}_t = \beta \bm{m}_{t-1} + (1-\beta) \nabla f(\bm{\theta}_{t})$. |
+|`nshb| `boolean` (e.g., `true`) | Selects the momentum update rule. Set to `false` to use SHB: $m_t = \beta m_{t-1} + \nabla f(\theta_{t})$, and `true` to use NSHB: $m_t = \beta m_{t-1} + (1-\beta) \nabla f(\theta_{t})$. |
