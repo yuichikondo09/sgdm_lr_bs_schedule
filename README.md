@@ -36,7 +36,7 @@ Batch size, learning rate, and momentum are all set to constant values, and trai
 ```
 
 Below is a detailed description of each configuration parameter used in the JSON example:
-```
+
 | Parameter | Type & Example | Description |
 | :- | :- | :- |
 | `model` | `string` (`"resnet18"`, `"WideResNet28_10"`, etc.) | Specifies the model architecture |
@@ -57,4 +57,4 @@ Below is a detailed description of each configuration parameter used in the JSON
 | `power` | `float` (`2.0`) | Polynomial decay power. Used when `lr_method="poly"`|
 | `nshb` | `boolean` (`true`/`false`) | Momentum update rule selector.<br>`false`: SHB<br>`true`: NSHB |
 | `use_wandb` | `boolean` (`true`/`false`) | Enables logging to Weights & Biases (wandb) |
-```
+
