@@ -36,4 +36,16 @@ python cifar100.py XXXXXX.json
 | `bs_method` | `"constant"`, `"exp_growth"` | Method for adjusting the batch size. |
 |`lr_method`|`"constant"`, `"cosine"`, `"diminishing"`, `"linear"`, `"poly"`, <br>`"exp_growth"`,`"warmup_const"`, `"warmup_cosine"`|Method for adjusting the learning rate.|
 |`beta_method`|`"constant"`|Method for adjusting the momentum parameter $\beta$. <br> In this study, only "constant" is used.|
-
+|`init_bs`|`int` (e.g., `128`)| The initial batch size for the optimizer. |
+|`bs_max`|`int` (e.g., `4096`)| The maximum batch size to be reached when increasing the batch size, if an upper limit is desired. Used when `bs_method` is `"exp_growth"`.|
+|`init_lr`|`float` (e.g., `0.1`)| The initial learning rate for the optimizer. |
+|`lr_max`|`float` (e.g., `0.2`)|The maximum learning rate to be reached when increasing the learning rate, if an upper limit is desired. Used when `lr_method` is `"exp_growth"`, `"warmup_const"`, or `"warmup_cosine"`.|
+|`lr_min`|`float` (e.g., `0.001`)| The minimum learning rate to be used in the cosine annealing schedule. Used when `lr_method` is `"cosine"` or `"warmup_cosine"`. The default value is `0`.|
+|`epochs`|`int` (e.g., `300`)|The total number of epochs for training.|
+|`incr_interval`|`int` (e.g., `30`)|Interval (in epochs) at which the batch size will increase. Also, the interval for increasing the learning rate when `lr_method` is `"exp_growth"`. Used when `bs_method` is `"exp_growth"`.|
+|`warmup_epochs`|`int` (e.g., `30`)|Number of epochs over which the learning rate warms up from `init_lr` to `lr_max`. Used when `lr_method` is `"warmup_const"` or `"warmup_cosine"`.|
+|`warmup_interval`|`int` (e.g., `3`)|The interval (in epochs) during which the learning rate increases in the warmup phase. Used when `lr_method` is `"warmup_const"` or `"warmup_cosine"`.|
+|`bs_growth_rate`|`float` (e.g., `2.0`)|The factor by which the batch size increases after each interval. Used when `bs_method` is `"exp_growth"`.|
+|`lr_growth_rate`| `float` (e.g., `1.2`) |The factor by which the learning rate increases after each interval. Used when `lr_method` is `"exp_growth"`, `"warnup_const`", or `"warmup_cosine"`.|
+|`power`| `float` (e.g., `2.0`) |A parameter used when `lr_method` is set to `"poly"`, defining the polynomial decay rate of the learning rate.|
+|`nshb| `boolean` (e.g., `true`) | Selects the momentum update rule. Set to `false` to use SHB: $\bm{m}_t = \beta \bm{m}_{t-1} + \nabla f(\bm{\theta}_{t})$, and `true` to use NSHB: $\bm{m}_t = \beta \bm{m}_{t-1} + (1-\beta) \nabla f(\bm{\theta}_{t})$. |
