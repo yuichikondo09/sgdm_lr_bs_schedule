@@ -68,19 +68,6 @@ def exp_warmup_cosine_lr_lambda(epoch, warmup_epochs, warmup_interval, epochs, e
     else:
         raise ValueError("Either 'eta_max' or 'growth_rate' must be provided.")
 
-def beta_growth_lr_lambda(config, beta_schedular, epoch):
-    beta = beta_schedular.get_beta()
-    bs_growth_rate = get_config_value(config, "bs_growth_rate")
-    gamma = min(bs_growth_rate-1e-2, 1/(beta**2)-1e-2)
-    return exp_growth_lr_lambda(
-        epoch,
-        eta_init=get_config_value(config, "init_lr"),
-        incr_interval=get_config_value(config, "incr_interval"),
-        epochs=get_config_value(config, "epochs"),
-        eta_max=config.get("lr_max"),
-        lr_growth_rate=gamma
-    )
-
 def get_lr_scheduler(optimizer, config, total_steps, beta_schedular):
     lr_method = get_config_value(config, "lr_method")
 
@@ -131,9 +118,6 @@ def get_lr_scheduler(optimizer, config, total_steps, beta_schedular):
             eta_max=config.get("lr_max"),
             lr_growth_rate=config.get("lr_growth_rate")
         ))
-        lr_step_type = "epoch"
-    elif lr_method == "beta_growth":
-        scheduler = optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda epoch: beta_growth_lr_lambda(config, beta_schedular, epoch))
         lr_step_type = "epoch"
     else:
         raise ValueError(f"Unknown learning rate method: {lr_method}")
