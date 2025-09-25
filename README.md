@@ -38,7 +38,7 @@ Below is a detailed description of each configuration parameter used in the JSON
 
 | Parameter | Type & Example | Description |
 | :- | :- | :- |
-| `optimizer` | `str` (`"nshb"`, `"shb"`, "sgd"`, `"rmsprop"`, "adam"`, `"adamw"`) | Specifies the optimizer to use during training. |
+| `optimizer` | `str` (`"nshb"`, `"shb"`, `"sgd"`, `"rmsprop"`, `"adam"`, `"adamw"`) | Specifies the optimizer to use during training. |
 | `model` | `str` (`"resnet18"`, `"resnet34"` etc.) | Specifies the model architecture |
 | `bs_method` | `str` (`"constant"`, `"exp_growth"`) | Method for adjusting the batch size |
 | `lr_method` | `str` (`"constant"`, `"cosine"`, `"diminishing"`,<br>`"linear"`, `"poly"`, `"exp_growth"`,<br>`"warmup_const"`, `"warmup_cosine"`) | Method for adjusting the learning rate |
