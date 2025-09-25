@@ -44,7 +44,7 @@ Below is a detailed description of each configuration parameter used in the JSON
 | `lr_method` | `str` (`"constant"`, `"cosine"`, `"diminishing"`,<br>`"linear"`, `"poly"`, `"exp_growth"`,<br>`"warmup_const"`, `"warmup_cosine"`) | Method for adjusting the learning rate. |
 | `init_bs` | `int` (`128`) | Initial batch size. |
 | `init_lr` | `float` (`0.1`) | Initial learning rate. |
-| `init_beta` | `float` (`0.9`) | Initial beta. Used when `optimizer="nshb"`,<br>`"shb"` |
+| `init_beta` | `float` (`0.9`) | Initial beta. Used when `optimizer="nshb"`,`"shb"` |
 | `bs_max` | `int` (`4096`) | Maximum batch size when increasing batch size. Used when `bs_method="exp_growth"`. |
 | `lr_max` | `float` (`0.2`) | Maximum learning rate when increasing learning rate. Used when `lr_method="exp_growth"`,<br>`"warmup_const"`, or `"warmup_cosine"`. |
 | `lr_min` | `float` (`0.001`, default `0`) | Minimum learning rate for cosine annealing. Used when `lr_method="cosine"` or `"warmup_cosine"`. |
