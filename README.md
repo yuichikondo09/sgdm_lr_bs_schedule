@@ -22,15 +22,14 @@ Batch size, learning rate, and momentum are all set to constant values, and trai
 
 ```json
 {
+  "nshb": true,
   "model": "resnet18",
   "bs_method": "constant",
   "lr_method": "constant",
-  "beta_method": "constant",
   "init_bs": 128,
   "init_lr": 0.1,
   "init_beta": 0.9,
   "epochs": 300,
-  "nshb": true,
   "use_wandb": true
 }
 ```
@@ -39,13 +38,14 @@ Below is a detailed description of each configuration parameter used in the JSON
 
 | Parameter | Type & Example | Description |
 | :- | :- | :- |
-| `model` | `str` (`"resnet18"`, `"WideResNet28_10"`, etc.) | Specifies the model architecture |
+| `optimizer` | `str` (`"nshb"`, `"shb"`, "sgd"`, `"rmsprop"`, "adam"`, `"adamw"`) | Specifies the optimizer to use during training. |
+| `model` | `str` (`"resnet18"`, `"resnet34"` etc.) | Specifies the model architecture |
 | `bs_method` | `str` (`"constant"`, `"exp_growth"`) | Method for adjusting the batch size |
 | `lr_method` | `str` (`"constant"`, `"cosine"`, `"diminishing"`,<br>`"linear"`, `"poly"`, `"exp_growth"`,<br>`"warmup_const"`, `"warmup_cosine"`) | Method for adjusting the learning rate |
-| `beta_method` | `str` (`"constant"`) | Method for adjusting the momentum parameter (β). *Only constant is used in this study* |
 | `init_bs` | `int` (`128`) | Initial batch size |
+| `init_lr` | `float` (`0.1`) | Initial learning rate |
+| `init_beta` | `float` (`0.9`) | Initial beta |
 | `bs_max` | `int` (`4096`) | Maximum batch size when increasing batch size. Used when `bs_method="exp_growth"` |
-| `init_lr` | `float` (`0.1`) | Initial learning rate                                                                                                              |
 | `lr_max` | `float` (`0.2`) | Maximum learning rate when increasing learning rate. Used when `lr_method="exp_growth"`,<br>`"warmup_const"`, or `"warmup_cosine"` |
 | `lr_min` | `float` (`0.001`, default `0`) | Minimum learning rate for cosine annealing. Used when `lr_method="cosine"` or `"warmup_cosine"` |
 | `epochs` | `int` (`300`) | Total number of training epochs |
@@ -55,6 +55,5 @@ Below is a detailed description of each configuration parameter used in the JSON
 | `bs_growth_rate` | `float` (`2.0`) | Batch size growth factor. Used when `bs_method="exp_growth"` |
 | `lr_growth_rate` | `float` (`1.2`) | Learning rate growth factor. Used when `lr_method="exp_growth"`, `"warmup_const"`, or `"warmup_cosine"` |
 | `power` | `float` (`2.0`) | Polynomial decay power. Used when `lr_method="poly"`|
-| `nshb` | `boolean` (`true`/`false`) | Momentum update rule selector.<br>`false`: SHB<br>`true`: NSHB |
 | `use_wandb` | `boolean` (`true`/`false`) | Enables logging to Weights & Biases (wandb) |
 
