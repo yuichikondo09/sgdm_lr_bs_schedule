@@ -22,7 +22,7 @@ Batch size, learning rate, and momentum are all set to constant values, and trai
 
 ```json
 {
-  "nshb": true,
+  "optimizer": "nshb",
   "model": "resnet18",
   "bs_method": "constant",
   "lr_method": "constant",
